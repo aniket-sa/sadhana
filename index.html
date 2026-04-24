@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Bhairav Sadhana</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="mantra.html">MANTRA</a>
+      <a href="ashtakam.html">ASHTAKAM</a>
+      <a href="naam108.html">108 NAAMAVALI</a>
+      <a href="durga.html">DURGA</a>
+
+      <!-- ✅ Gesture Toggle -->
+      <div class="gesture-bar">
+        <div class="gesture-bar">
+
+  <!-- Camera toggle -->
+  <label class="switch">
+    <input type="checkbox" onchange="toggleGesture(this)">
+    <span class="slider"></span>
+  </label>
+
+  <!-- Camera indicator -->
+  <!-- <span id="camIndicator" class="cam-dot"></span> -->
+
+  <!-- Mode dropdown -->
+  <select class="gesture-mode" onchange="changeMode(this.value)">
+    <option value="none">None</option>
+    <option value="head">Head</option>
+    <option value="hand">Hand</option>
+  </select>
+
+  <!-- Active status -->
+  <span id="gestureStatus">OFF</span>
+
+</div>
+      </div>
+    </nav>
+
+    <div class="home-wrapper">
+      <h1>🕉️ Bhairav Sadhana</h1>
+
+      <img src="Bhairav.jpg" alt="Bhairav Baba" class="main-img" />
+
+      <p class="intro">Sit calmly. Focus on breath. Begin with devotion.</p>
+      <p class="sub-text">Enter your sadhana with awareness and stillness.</p>
+    </div>
+
+    <!-- ✅ Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.min.js"></script>
+
+
+    <script src="script.js"></script>
+  </body>
+</html>

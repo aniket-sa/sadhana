@@ -1,0 +1,601 @@
+<!doctype html>
+<html>
+<head>
+  <title>Gesture Debug - Scroll Tuning</title>
+
+  <style>
+    body {
+      background: black;
+      color: #f5c542;
+      text-align: center;
+      font-family: Arial;
+      overflow: hidden;
+    }
+
+    video {
+      border: 2px solid orange;
+    }
+
+    .pointer {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: red;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+    }
+
+    .panel {
+      margin-top: 15px;
+      font-size: 18px;
+    }
+
+    select, button {
+      padding: 6px 10px;
+      margin: 5px;
+      font-size: 14px;
+    }
+
+    #scrollBox {
+      position: fixed;
+      right: 40px;
+      top: 100px;
+      width: 250px;
+      height: 300px;
+      overflow: hidden;
+      border: 2px solid orange;
+      background: #111;
+      border-radius: 10px;
+    }
+
+    .scroll-content {
+      padding: 15px;
+      line-height: 2;
+      font-size: 18px;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Gesture Debug (Scroll Tuning)</h1>
+
+<video id="video" width="640" height="360" autoplay muted></video>
+
+<div id="scrollBox">
+  <div class="scroll-content">
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+    <p>ॐ नमः शिवाय</p>
+  </div>
+</div>
+
+<div id="pointer" class="pointer"></div>
+
+<div class="panel">
+  Mode:
+  <select onchange="changeMode(this.value)">
+    <option value="none">None</option>
+    <option value="head">Head</option>
+    <option value="hand">Hand</option>
+  </select>
+
+  <button onclick="start()">Start</button>
+  <button onclick="stop()">Stop</button>
+</div>
+
+<div class="panel">Movement: <span id="movement">-</span></div>
+<div class="panel">Velocity: <span id="value">-</span></div>
+
+<!-- Mediapipe -->
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.min.js"></script>
+
+<script>
+
+let mode = "none";
+const video = document.getElementById("video");
+
+function changeMode(m) {
+  mode = m;
+  resetTracking();
+}
+
+function start() {
+  camera.start();
+}
+
+function stop() {
+  if (video.srcObject) {
+    video.srcObject.getTracks().forEach(t => t.stop());
+  }
+}
+
+function resetTracking() {
+  lastY = null;
+  lastTime = 0;
+  lastScrollTime = 0;
+  lastHandY = null;
+}
+
+// ================= FACE =================
+const faceMesh = new FaceMesh({
+  locateFile: (file) =>
+    `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`
+});
+
+faceMesh.setOptions({
+  maxNumFaces: 1,
+  refineLandmarks: true,
+  minDetectionConfidence: 0.7,
+  minTrackingConfidence: 0.7
+});
+
+let lastY = null;
+let lastTime = 0;
+let lastScrollTime = 0;
+
+faceMesh.onResults((results) => {
+  if (mode !== "head") return;
+
+  if (!results.multiFaceLandmarks?.length) {
+    lastY = null;
+    return;
+  }
+
+  const y = results.multiFaceLandmarks[0][1].y;
+  const x = results.multiFaceLandmarks[0][1].x;
+
+  movePointer(x, y);
+
+  let now = Date.now();
+
+  if (lastY !== null) {
+    let diff = y - lastY;
+    let velocity = diff / (now - lastTime);
+
+    document.getElementById("value").innerText = velocity.toFixed(6);
+
+    const SCROLL_STEP = 600;
+
+    if (Math.abs(velocity) > 0.00025 && now - lastScrollTime > 800) {
+
+      const direction = velocity > 0 ? "DOWN" : "UP";
+      document.getElementById("movement").innerText = direction;
+
+      const scrollBox = document.getElementById("scrollBox");
+
+      scrollBox.scrollBy({
+        top: direction === "DOWN" ? SCROLL_STEP : -SCROLL_STEP,
+        behavior: "smooth"
+      });
+
+      scrollBox.style.borderColor = direction === "DOWN" ? "green" : "red";
+
+      lastScrollTime = now;
+
+    } else {
+      document.getElementById("movement").innerText = "STABLE";
+    }
+  }
+
+  lastY = y;
+  lastTime = now;
+});
+
+// ================= HAND =================
+const hands = new Hands({
+  locateFile: (file) =>
+    `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`
+});
+
+hands.setOptions({
+  maxNumHands: 1,
+  modelComplexity: 1,
+  minDetectionConfidence: 0.7,
+  minTrackingConfidence: 0.7
+});
+
+let lastHandY = null;
+let lastHandTime = 0;
+let lastHandScroll = 0;
+
+hands.onResults((results) => {
+  if (mode !== "hand") return;
+
+  if (!results.multiHandLandmarks?.length) {
+    lastHandY = null;
+    return;
+  }
+
+  const y = results.multiHandLandmarks[0][8].y;
+  const x = results.multiHandLandmarks[0][8].x;
+
+  movePointer(x, y);
+
+  let now = Date.now();
+
+  if (lastHandY !== null && lastHandTime !== 0) {
+
+    if (now - lastHandTime < 16) {
+      lastHandY = y;
+      lastHandTime = now;
+      return;
+    }
+
+    let diff = y - lastHandY;
+    let velocity = diff / (now - lastHandTime);
+
+    document.getElementById("value").innerText = velocity.toFixed(5);
+
+    const MIN_DISTANCE = 0.02;
+    const HAND_THRESHOLD = 0.002;
+    const HAND_COOLDOWN = 500;
+    const SCROLL_STEP = 700;
+
+    if (
+      Math.abs(diff) > MIN_DISTANCE &&
+      Math.abs(velocity) > HAND_THRESHOLD &&
+      now - lastHandScroll > HAND_COOLDOWN
+    ) {
+      const direction = velocity > 0 ? "DOWN" : "UP";
+
+      document.getElementById("movement").innerText = direction;
+
+      const scrollBox = document.getElementById("scrollBox");
+
+      scrollBox.scrollBy({
+        top: direction === "DOWN" ? SCROLL_STEP : -SCROLL_STEP,
+        behavior: "smooth"
+      });
+
+      scrollBox.style.borderColor = direction === "DOWN" ? "green" : "red";
+
+      lastHandScroll = now;
+
+    } else {
+      document.getElementById("movement").innerText = "STABLE";
+    }
+  }
+
+  lastHandY = y;
+  lastHandTime = now;
+});
+
+// ================= CAMERA =================
+const camera = new Camera(video, {
+  onFrame: async () => {
+    if (mode === "head") {
+      await faceMesh.send({ image: video });
+    }
+
+    if (mode === "hand") {
+      await hands.send({ image: video });
+    }
+  },
+  width: 640,
+  height: 360
+});
+
+function movePointer(x, y) {
+  const pointer = document.getElementById("pointer");
+  const rect = video.getBoundingClientRect();
+
+  pointer.style.left = rect.left + x * rect.width + "px";
+  pointer.style.top = rect.top + y * rect.height + "px";
+}
+
+</script>
+
+</body>
+</html>
