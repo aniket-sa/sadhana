@@ -420,3 +420,50 @@ input:checked + .slider:before {
   font-size: 13px;
   letter-spacing: 1px;
 }
+
+/* //for mobile  */
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+}
+@media (max-width: 768px) {
+
+  .naam-columns {
+    column-count: 1;
+    font-size: 18px;
+    line-height: 2.4;
+  }
+
+  .ashtakam-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .verse-block {
+    font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .gesture-bar {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    gap: 6px;
+    font-size: 12px;
+  }
+
+  nav a {
+    margin: 0 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-img {
+    width: 200px;
+  }
+}
